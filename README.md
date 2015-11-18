@@ -1,6 +1,6 @@
-# Elasticsearch Docker image with Hunspell Token Filter
+# Elasticsearch Docker image with CZ dictionary
 
-Small docker image based on Alpine Linux image.
+Small docker image based on Alpine Linux image. Installed ICU plugin Czech, Slovak and Polish Dictionaries.
 
 ### Installed tools
 

@@ -14,7 +14,7 @@ RUN apk add --update curl && \
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 ADD hunspell /elasticsearch/config/hunspell
 ADD entrypoint.sh /entrypoint.sh
-
+RUN chmod +x /entrypoint.sh
 RUN cd /elasticsearch && bin/plugin install analysis-icu
 
 ENV ES_CLUSTER_NAME elastic
