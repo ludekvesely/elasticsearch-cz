@@ -1,7 +1,7 @@
 FROM develar/java:latest
 MAINTAINER Ludek Vesely <ludek.vesely@email.com>
 
-ENV ES_VERSION 2.0.0
+ENV ES_VERSION 1.7.3
 
 RUN apk add --update curl && \
   ( curl -Lskj https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$ES_VERSION.tar.gz | \
