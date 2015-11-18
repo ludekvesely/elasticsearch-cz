@@ -26,3 +26,8 @@ docker run -p 9200:9200 ludekvesely/elasticsearch-cz:latest
 - `ES_LOG_LEVEL` logger level
 - `ES_HEAP_SIZE` heap size (should be half of availible RAM)
 
+### Exposed ports
+
+- 9200
+- 9300
+
