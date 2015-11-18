@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/extensions/description/2006" xmlns:d="http://openoffice.org/extensions/description/2006"  xmlns:xlink="http://www.w3.org/1999/xlink">
+    <identifier value="org.openoffice.sl.dictionaries.sl" />
+    <version value="4.1.2" />
+    <dependencies>
+        <OpenOffice.org-minimal-version value="3.0" d:name="Slovenian Language Tools for OpenOffice.org 3.0."/>
+    </dependencies>
+    <registration>
+        <simple-license  accept-by="user" default-license-id="sl-SI" suppress-on-update="false" >
+            <license-text xlink:href="README.txt" lang="sl-SI" license-id="sl-SI" />
+        </simple-license>
+    </registration>
+</description>
