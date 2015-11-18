@@ -12,8 +12,11 @@ if [ "$1" = 'elasticsearch' ]; then
     /elasticsearch/config/elasticsearch.yml
   mkdir -p $ES_PATH_DATA
   mkdir -p $ES_PATH_LOG
+  chmod 777 $ES_PATH_LOG
   adduser -S elasticsearch
+  addgroup elasticsearch
   chown -R elasticsearch:elasticsearch $ES_PATH_DATA
+  chown -R elasticsearch:elasticsearch /elasticsearch
   exec gosu elasticsearch /elasticsearch/bin/elasticsearch -Des.logger.level=$ES_LOG_LEVEL
 fi
 exec "$@"

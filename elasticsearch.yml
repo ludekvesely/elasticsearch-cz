@@ -11,7 +11,7 @@ index:
 path:
   data: -ES_PATH_DATA-
   logs: -ES_PATH_LOG-
-  plugins: -ES_PATH_PLUGINS-
+  plugins: /elasticsearch/plugins
 
 network:
   bind_host: 0.0.0.0
