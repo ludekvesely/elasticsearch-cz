@@ -12,7 +12,7 @@ RUN apk add --update curl && \
   apk del curl && \
   rm -rfv /var/cache/apk/* /tmp/* /var/tmp/*
 
-RUN cd /elasticsearch && bin/plugin install elasticsearch/elasticsearch-analysis-icu/2.7.0
+RUN cd /elasticsearch && bin/plugin install analysis-icu
 ADD hunspell /elasticsearch/config/hunspell
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
