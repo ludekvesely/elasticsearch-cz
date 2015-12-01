@@ -26,6 +26,7 @@ ENV ES_PATH_DATA /var/services/data/elasticsearch
 ENV ES_PATH_LOG /var/services/log/elasticsearch
 ENV ES_LOG_LEVEL INFO
 ENV ES_HEAP_SIZE 1G
+ENV ES_MAX_RESULT_WINDOW 2147483647
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["elasticsearch"]
