@@ -9,6 +9,7 @@ if [ "$1" = 'elasticsearch' ]; then
     -e "s#-ES_NUM_OF_REPLICAS-#${ES_NUM_OF_REPLICAS}#" \
     -e "s#-ES_PATH_DATA-#${ES_PATH_DATA}#" \
     -e "s#-ES_PATH_LOG-#${ES_PATH_LOG}#" \
+    -e "s#-ES_MAX_RESULT_WINDOW-#${ES_MAX_RESULT_WINDOW}#" \
     /elasticsearch/config/elasticsearch.yml
   mkdir -p $ES_PATH_DATA
   mkdir -p $ES_PATH_LOG
