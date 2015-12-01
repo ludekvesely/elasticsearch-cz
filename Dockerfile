@@ -14,9 +14,6 @@ RUN apk add --update curl && \
 
 RUN cd /elasticsearch && bin/plugin install analysis-icu
 ADD hunspell /elasticsearch/config/hunspell
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
 ENV ES_CLUSTER_NAME elastic
 ENV ES_NODE_LOCAL true
@@ -27,6 +24,10 @@ ENV ES_PATH_LOG /var/services/log/elasticsearch
 ENV ES_LOG_LEVEL INFO
 ENV ES_HEAP_SIZE 1G
 ENV ES_MAX_RESULT_WINDOW 2147483647
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["elasticsearch"]
