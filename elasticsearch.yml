@@ -7,6 +7,7 @@ node:
 index:
   number_of_shards: -ES_NUM_OF_SHARDS-
   number_of_replicas: -ES_NUM_OF_REPLICAS-
+  max_result_window: -ES_MAX_RESULT_WINDOW-
 
 path:
   data: -ES_PATH_DATA-
