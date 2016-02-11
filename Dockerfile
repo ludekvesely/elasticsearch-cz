@@ -12,7 +12,7 @@ RUN apk add --update curl && \
   apk del curl && \
   rm -rfv /var/cache/apk/* /tmp/* /var/tmp/*
 
-RUN cd /elasticsearch && bin/plugin install analysis-icu
+RUN cd /elasticsearch && bin/plugin install analysis-icu && bin/plugin install delete-by-query
 ADD hunspell /elasticsearch/config/hunspell
 
 ENV ES_CLUSTER_NAME elastic
