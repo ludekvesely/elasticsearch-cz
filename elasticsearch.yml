@@ -1,29 +1,13 @@
-cluster:
-  name: -ES_CLUSTER_NAME-
+cluster.name: -ES_CLUSTER_NAME-
+node.local: -ES_NODE_LOCAL-
+index.number_of_shards: -ES_NUM_OF_SHARDS-
+index.number_of_replicas: -ES_NUM_OF_REPLICAS-
+path.data: -ES_PATH_DATA-
+path.logs: -ES_PATH_LOG-
+path.plugins: /elasticsearch/plugins
+network.bind_host: 0.0.0.0
+http.port: 9200
+transport.tcp.port: 9300
 
-node:
-  local: -ES_NODE_LOCAL-
-
-index:
-  number_of_shards: -ES_NUM_OF_SHARDS-
-  number_of_replicas: -ES_NUM_OF_REPLICAS-
-  max_result_window: -ES_MAX_RESULT_WINDOW-
-
-path:
-  data: -ES_PATH_DATA-
-  logs: -ES_PATH_LOG-
-  plugins: /elasticsearch/plugins
-
-network:
-  bind_host: 0.0.0.0
-
-http:
-  port: 9200
-
-transport:
-  tcp:
-    port: 9300
-
-script:
-  disable_dynamics: false
+-ES_ADDITIONAL_CONFIG-
 
