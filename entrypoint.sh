@@ -11,7 +11,7 @@ if [ "$1" = 'elasticsearch' ]; then
 		-e "s#-ES_PATH_LOG-#${ES_PATH_LOG}#" \
 		/elasticsearch/config/elasticsearch.yml
 	echo "${ES_ADDITIONAL_CONFIG}" | awk '{gsub(/\\n/,"\n")}1' | while read -r line; do
-		echo "$line" >> /elasticsearch/config/elasticsearch.yml
+		grep "$line" /elasticsearch/config/elasticsearch.yml >/dev/null 2>/dev/null || ( echo "$line" >> /elasticsearch/config/elasticsearch.yml )
 	done
 	echo -e "\nElasticsearch configuration:\n"
 	cat /elasticsearch/config/elasticsearch.yml
