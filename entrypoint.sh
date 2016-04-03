@@ -9,8 +9,10 @@ if [ "$1" = 'elasticsearch' ]; then
 		-e "s#-ES_NUM_OF_REPLICAS-#${ES_NUM_OF_REPLICAS}#" \
 		-e "s#-ES_PATH_DATA-#${ES_PATH_DATA}#" \
 		-e "s#-ES_PATH_LOG-#${ES_PATH_LOG}#" \
-		-e "s#-ES_ADDITIONAL_CONFIG-#${ES_ADDITIONAL_CONFIG}#" \
 		/elasticsearch/config/elasticsearch.yml
+	echo "${ES_ADDITIONAL_CONFIG}" | awk '{gsub(/\\n/,"\n")}1' | while read -r line; do
+		echo "$line" >> /elasticsearch/config/elasticsearch.yml
+	done
 	echo -e "\nElasticsearch configuration:\n"
 	cat /elasticsearch/config/elasticsearch.yml
 	mkdir -p $ES_PATH_DATA
