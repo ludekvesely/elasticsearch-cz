@@ -21,8 +21,9 @@ ENV ES_CLUSTER_NAME=elastic \
 	ES_HEAP_SIZE=1G \
 	ES_ADDITIONAL_CONFIG=""
 
-COPY hunspell elasticsearch.yml /elasticsearch/config/
-COPY entrypoint.sh /
+ADD hunspell /elasticsearch/config/hunspell
+ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
