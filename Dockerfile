@@ -9,7 +9,8 @@ RUN apk add --update curl && \
 	curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.2/gosu-amd64" && chmod +x /usr/local/bin/gosu && \
 	rm -rf $(find /elasticsearch | egrep "(\.(exe|bat)$|sigar/.*(dll|winnt|x86-linux|solaris|ia64|freebsd|macosx))") && \
 	apk del curl && rm -rfv /var/cache/apk/* /tmp/* /var/tmp/* && \
- 	cd /elasticsearch && bin/plugin install analysis-icu && bin/plugin install delete-by-query
+ 	cd /elasticsearch && bin/plugin install analysis-icu && bin/plugin install delete-by-query && \
+ 	bin/plugin install lmenezes/elasticsearch-kopf/2.0
 
 ENV ES_CLUSTER_NAME=elastic \
 	ES_NODE_LOCAL=true \
