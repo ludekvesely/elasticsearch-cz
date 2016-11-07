@@ -24,6 +24,7 @@ ENV ES_CLUSTER_NAME=elastic \
 
 ADD hunspell /elasticsearch/config/hunspell
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+ADD logging.yml /elasticsearch/config/logging.yml
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
